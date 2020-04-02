@@ -218,7 +218,7 @@ void ExecuteA32Instruction(u32 instruction) {
     }
     for (size_t i = 0; i < ext_regs.size(); ++i) {
         if (ext_regs[i] != cpu.ExtRegs()[i]) {
-            fmt::print("{:3s}: {:08x}\n", static_cast<A32::ExtReg>(i), cpu.Regs()[i]);
+            fmt::print("{:3s}: {:08x}\n", static_cast<A32::ExtReg>(i), cpu.ExtRegs()[i]);
         }
     }
     if (cpsr != cpu.Cpsr()) {
