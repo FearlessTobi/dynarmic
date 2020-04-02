@@ -80,6 +80,12 @@ add_library(dynarmic
     common/u128.cpp
     common/u128.h
     common/variant_util.h
+    backend/interpreter/interpreter.cpp
+    backend/interpreter/interpreter.h
+    backend/interpreter/interpreter_context.h
+    backend/interpreter/interpreter_data_processing.cpp
+    backend/interpreter/interpreter_detail.h
+    backend/interpreter/value.h
     frontend/A32/decoder/arm.h
     frontend/A32/decoder/arm.inc
     frontend/A32/decoder/thumb16.h
