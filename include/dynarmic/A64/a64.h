@@ -105,8 +105,6 @@ public:
     /// Modify PSTATE
     void SetPstate(std::uint32_t value);
 
-    void ChangeProcessorID(std::size_t new_processor);
-
     /// Clears exclusive state for this core.
     void ClearExclusiveState();
 
