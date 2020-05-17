@@ -653,9 +653,7 @@ void A64EmitX64::EmitA64GetCNTFRQ(A64EmitContext& ctx, IR::Inst* inst) {
 
 void A64EmitX64::EmitA64GetCNTPCT(A64EmitContext& ctx, IR::Inst* inst) {
     ctx.reg_alloc.HostCall(inst);
-    if (!conf.wall_clock_cntpct) {
-        code.UpdateTicks();
-    }
+    code.UpdateTicks();
     Devirtualize<&A64::UserCallbacks::GetCNTPCT>(conf.callbacks).EmitCall(code);
 }
 
