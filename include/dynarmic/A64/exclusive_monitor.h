@@ -46,8 +46,6 @@ public:
 
     /// Unmark everything.
     void Clear();
-    /// Unmark processor id
-    void Clear(size_t processor_id);
 
 private:
     bool CheckAndClear(size_t processor_id, VAddr address, size_t size);
@@ -55,7 +53,7 @@ private:
     void Lock();
     void Unlock();
 
-    static constexpr VAddr RESERVATION_GRANULE_MASK = 0xFFFF'FFFF'FFFF'FFFFull;
+    static constexpr VAddr RESERVATION_GRANULE_MASK = 0xFFFF'FFFF'FFFF'FFF0ull;
     static constexpr VAddr INVALID_EXCLUSIVE_ADDRESS = 0xDEAD'DEAD'DEAD'DEADull;
     std::atomic_flag is_locked;
     std::vector<VAddr> exclusive_addresses;
