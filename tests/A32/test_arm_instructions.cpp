@@ -537,7 +537,7 @@ TEST_CASE("arm: Cleared Q flag 2", "[arm][A32][JitA64]") {
     REQUIRE((jit.Cpsr() & (1 << 27)) == 0);
 }
 
-TEST_CASE("arm: vclt.f32 with zero", "[arm][A32][.]") {
+TEST_CASE("arm: vclt.f32 with zero", "[arm][A32]") {
     ArmTestEnv test_env;
     A32::Jit jit{GetUserConfig(&test_env)};
     test_env.code_mem = {
