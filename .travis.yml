@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 language: cpp
 
 cache: ccache
@@ -78,3 +79,17 @@ matrix:
             - ninja-build
       install: ./.travis/sse3-only-on-x86_64-linux/deps.sh
       script: ./.travis/sse3-only-on-x86_64-linux/build.sh
+=======
+sudo: true
+dist: bionic
+language: cpp
+compiler:
+  - gcc
+  - clang
+addons:
+  apt:
+    packages:
+      - nasm yasm g++-multilib tcsh
+script:
+  - make test
+>>>>>>> 8042dc93... Squashed 'externals/xbyak/' changes from 73ac5866..0140eeff
