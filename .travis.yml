@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 language: cpp
 
 cache: ccache
@@ -31,20 +30,6 @@ matrix:
             - ninja-build
       install: ./.travis/build-x86_64-linux/deps.sh
       script: ./.travis/build-x86_64-linux/build.sh
-    - env: NAME="Linux aarch64 Build"
-      os: linux
-      dist: bionic
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-          - gcc-8-aarch64-linux-gnu
-          - g++-8-aarch64-linux-gnu
-          - ninja-build
-          - qemu-user
-      install: ./.travis/build-aarch64-linux/deps.sh
-      script: ./.travis/build-aarch64-linux/build.sh
     - env: NAME="macOS Build"
       os: osx
       sudo: false
@@ -79,17 +64,3 @@ matrix:
             - ninja-build
       install: ./.travis/sse3-only-on-x86_64-linux/deps.sh
       script: ./.travis/sse3-only-on-x86_64-linux/build.sh
-=======
-sudo: true
-dist: bionic
-language: cpp
-compiler:
-  - gcc
-  - clang
-addons:
-  apt:
-    packages:
-      - nasm yasm g++-multilib tcsh
-script:
-  - make test
->>>>>>> 8042dc93... Squashed 'externals/xbyak/' changes from 73ac5866..0140eeff
